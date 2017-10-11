@@ -11,16 +11,13 @@
 </h3>
 
 <div class="">
-  <%= form_for @appointment do |f| %>
+  <%= form_for @appointment, remote: true do |f| %>
     <%= f.text_field :title %>
     <%= f.text_field :appt_time %>
     <%= f.submit "Make appt" %>
   <% end %>
 </div>
 
-<div class="">
-  <% @appointments.each do |a| %>
-    <h3><%= a.title %></h3>
-    <p><%= a.appt_time %></p>
-  <% end %>
+<div id="appointments">
+  <%= render 'appointments' %>
 </div>
