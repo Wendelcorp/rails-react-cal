@@ -6,18 +6,4 @@
   Appt
 </h2>
 
-<h3>
-  Make a new one
-</h3>
-
-<div class="">
-  <%= form_for @appointment, remote: true do |f| %>
-    <%= f.text_field :title %>
-    <%= f.text_field :appt_time %>
-    <%= f.submit "Make appt" %>
-  <% end %>
-</div>
-
-<div id="appointments">
-  <%= render 'appointments' %>
-</div>
+<%= react_component('Appointments', appointments: @appointments) %>
